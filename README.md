@@ -1,6 +1,29 @@
 gishadoop
 =========
 
-1. hadoop_install.md
-2. hadoop_commands.md
-3. hive_install.md
+
+大数据的技术基础：MapReduce、Google File System和BigTable
+
+2003年到2004年间，Google发表了MapReduce、GFS（Google File System）和BigTable三篇技术论文，提出了一套全新的分布式计算理论。
+
+MapReduce是分布式计算框架，GFS（Google File System）是分布式文件系统，BigTable是基于Google File System的数据存储系统，这三大组件组成了Google的分布式计算模型。
+
+Google的分布式计算模型相比于传统的分布式计算模型有三大优势：首先，它简化了传统的分布式计算理论，降低了技术实现的难度，可以进行实际的应用。其次，它可以应用在廉价的计算设备上，只需增加计算设备的数量就可以提升整体的计算能力，应用成本十分低廉。最后，它被Google应用在Google的计算中心，取得了很好的效果，有了实际应用的证明。
+
+后来，各家互联网公司开始利用Google的分布式计算模型搭建自己的分布式计算系统，Google的这三篇论文也就成为了大数据时代的技术核心。
+
+主流的三大分布式计算系统：Hadoop，Spark和Storm
+
+由于Google没有开源Google分布式计算模型的技术实现，所以其他互联网公司只能根据Google三篇技术论文中的相关原理，搭建自己的分布式计算系统。
+
+Yahoo的工程师Doug Cutting和Mike Cafarella在2005年合作开发了分布式计算系统Hadoop。后来，Hadoop被贡献给了Apache基金会，成为了Apache基金会的开源项目。Doug Cutting也成为Apache基金会的主席，主持Hadoop的开发工作。
+
+Hadoop采用MapReduce分布式计算框架，并根据GFS开发了HDFS分布式文件系统，根据BigTable开发了HBase数据存储系统。尽管和Google内部使用的分布式计算系统原理相同，但是Hadoop在运算速度上依然达不到Google论文中的标准。
+
+不过，Hadoop的开源特性使其成为分布式计算系统的事实上的国际标准。Yahoo，Facebook，Amazon以及国内的百度，阿里巴巴等众多互联网公司都以Hadoop为基础搭建自己的分布式计算系统。
+
+Spark也是Apache基金会的开源项目，它由加州大学伯克利分校的实验室开发，是另外一种重要的分布式计算系统。它在Hadoop的基础上进行了一些架构上的改良。Spark与Hadoop最大的不同点在于，Hadoop使用硬盘来存储数据，而Spark使用内存来存储数据，因此Spark可以提供超过Hadoop100倍的运算速度。但是，由于内存断电后会丢失数据，Spark不能用于处理需要长期保存的数据。
+
+Storm是Twitter主推的分布式计算系统，它由BackType团队开发，是Apache基金会的孵化项目。它在Hadoop的基础上提供了实时运算的特性，可以实时的处理大数据流。不同于Hadoop和Spark，Storm不进行数据的收集和存储工作，它直接通过网络实时的接受数据并且实时的处理数据，然后直接通过网络实时的传回结果。
+
+Hadoop，Spark和Storm是目前最重要的三大分布式计算系统，Hadoop常用于离线的复杂的大数据处理，Spark常用于离线的快速的大数据处理，而Storm常用于在线的实时的大数据处理。
