@@ -1,14 +1,3 @@
-- 查看NameNode，DataNode运行情况
-可以访问：http://192.168.56.191:50070/
-
-- 执行wordcount任务
-
-首先找到相应的jar：  
-      ./hadoop-2.3.0-cdh5.0.2/share/hadoop/mapreduce2/hadoop-mapreduce-examples-2.3.0-cdh5.0.2.jar  
-
-然后使用jar命令：  
-      hadoop jar ./hadoop-mapreduce-examples-2.2.0.jar wordcount /input /output
-      
 1	搭建Hadoop集群
 操作系统环境
 我们有4台机器，其中三台为SUSE10：
@@ -425,4 +414,3 @@ $ hadoop fs -put roads.json /home/hduser/sampledata/roads/roads.json
 2.	安装过程问题集合1
 3.	安装过程问题结合2
 4.	安装过程问题集合3
-
