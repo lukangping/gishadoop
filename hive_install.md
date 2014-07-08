@@ -1,3 +1,6 @@
+HIVE介绍
+http://www.cnblogs.com/sharpxiajun/archive/2013/06/02/3114180.html
+
 export HIVE_HOME=/home/hduser/hive-0.12.0-cdh5.0.2
 export PATH=$HIVE_HOME/bin:$PATH
 
